@@ -13,7 +13,7 @@ def sign(m):
 	#generate signature
 	#Your code here
 	r, s = ecdsa.sign(m, private_key)
-	# valid = ecdsa.verify((r, s), m, public_key, sha256)
+	valid = ecdsa.verify((r, s), m, public_key)
 
 	assert isinstance( public_key, point.Point )
 	assert isinstance( r, int )
