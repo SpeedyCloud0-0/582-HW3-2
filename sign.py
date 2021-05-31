@@ -8,11 +8,10 @@ from hashlib import sha256
 def sign(m):
 	#generate public key
 	#Generate a private key
-	private_key, public_key = keys.gen_keypair(curve.P256)
+	private_key, public_key = keys.gen_keypair(curve.secp256k1)
 
 	#generate signature
-	#Your code here
-	r, s = ecdsa.sign(m, private_key)
+	r, s = ecdsa.sign(m, private_key, sha256)
 	# valid = ecdsa.verify((r, s), m, public_key)
 
 	assert isinstance( public_key, point.Point )
