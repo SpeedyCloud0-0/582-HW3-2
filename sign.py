@@ -7,7 +7,7 @@ from hashlib import sha256
 
 def sign(m):
 	#generate public key
-	private_key, public_key = keys.gen_keypair(curve.secp256k1)
+	private_key, public_key = keys.gen_keypair(curve.P256)
 
 	#generate signature
 	r, s = ecdsa.sign(m, private_key)
